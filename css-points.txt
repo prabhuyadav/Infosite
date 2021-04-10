@@ -1,0 +1,118 @@
+Box Model:
+
+ height, width.
+
+padding comes next. which is to specify the gap/space between the contents of the div(not background color or images) and the edge of the div. so adding padding inturn increases the width & height of the element/div
+
+Border is the next layer which is to provide a border on all 4 sides of our element. specifics can be mentioned in various ways for all 4 sides of the border.
+
+Margin is the outer most layer of our box model which is added to create some space between the current div and the other elements in the body or around our div
+
+
+Display Property : 4 types- Block, Inline, Inline-block, None
+
+Common Block Elements - by default their display property is block i.e they take up the entire width of the web page
+
+    paragraphs(<p>), Headers (<h1> through <h6>), divisions (divs), Lists and List items(<ol> <ul> and <li>), Forms (<form>)
+
+Common Inline elements :  by default their display property is Inline i.e they only take up as much space as they need opposite to the block elements who take up the whole width there by blocking out others.
+
+    Spans(similar to  div tags used for styling a piece of content.)(<span>), Anchors(<a>)
+
+* we can have span nested inside a paragraph tag for example i.e inline element inside a block element tag (used in "A web developer" part in index.html). but vice-versa i.e using block element tag inside an inline element tag doesn't work and should not be used.
+
+Inline elements width cannot be changed.
+Block elements width can be adjusted by they won't allow other elements to sit in the same block.
+
+So if we want elements to be inline and at the same time be able to adjust their widths we have to use 'inline-block'
+
+Inline Block Elements :Images(<img>) - inline elements have little gap between them the browser adds this by default.
+
+Display :None -  this actually removes the element from the website as if it didn't exist.
+
+Visibility : hidden -  this property Visibility set to hidden will just make the element disappear but still occupy the space i.e it is not taken out of the website.
+
+CSS Positioning : Position Property - Static, Relative, Absolute, Fixed
+
+Static - All html elements are static in position by default. Static position is just according to the html flow and rules.
+
+Relative position -  the relative position is relative to the original static position. coordinates left, right top, bottom
+
+position:relative;
+left : 10px;        so we have to add the postion relative and add the coordinate. so here the element moves to the right 10px
+                    if we are using the left 10px means, the result should be a new position which when compared to the old static position would look like it has a left margin of 10px.
+                    so the element has to move right in order for the element to look like it has left margin to it's original position.
+similarly adding right will make the element move left. top will make it move bottom. bottom will make it move top direction
+
+* adding relative position to an element and moving it does not affect the layout of other elements around it.
+
+Position : Absolute - in this case we position the element relative to it's parent.(immediate parent who has relative position, if no parent has  relative position then it will be relative to the highest parent (generally body of the html). if multiple parents have relative position then it will be relative to the lowest parent i.e the immediate parent of this element that has  relative position)
+
+so position:Absolute;
+   right : 30px;  let's say the element is in a div. now this element which is on the left side of the screen which is default will move to the right side of the screen with a gap/right margin of 30px to the right edge of the div which is it's parent.
+
+* Using Absolute position to move an element does affect the flow of the html and the elements around it accordingly.
+* using absolute position basically will take the element out of the flow of the html so other elements adjust as if this element weren't even there.
+
+Position : Fixed - the element will stay in that fixed position relative to the parent even if you are scrolling through the website. same coordinate rules apply.
+
+
+Text-align property :  this has to be set to the parent container as a result all the contents inside that parent container will become center aligned.
+But the text align won't align the elements which already have a width set. so for this case we can uuse margin:auto
+
+margin:auto will create a margin on 4 sides to align at the center. so for a block element you can use margin auto for left and right sides to move it along it's block and align it at the center of the block.
+
+
+Font-Styling
+
+two major font-family that we use - sans-serif, serif. under each family there are a lot of font styles that we can use.
+
+for sans-serif the default font is Arial. for serif the default font is Times
+
+So we can specify both the font(eg verdana) we want and the font-family as  for eg : font-family: verdana, sans-serif;
+
+So some of the fonts might not be web safe. meaning some fonts may not be installed or supported by the Operating system, so even if in our OS we can see that font style
+but some other users might see other font(default generally) if the font we are trying to use is not supported by that user's OS.
+So we need to be careful and check what is the probability of having that particular font in that particular OS.
+TO check this use cssfontstack.com
+
+Take for example Helvetica .this is mac OS specific lot of windows systems doesn't have it. so we can use a fall back font styles
+
+font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+so here we are trying to use specific style "Helvetica Neue" if that isn't supported then try to use Helvetica, if that is also not supported then Arial font specific of sans-serif. if Arial also not supported then use whatever font belonging to sans-serif is available(some font would be default in that case.generally it's Arial)
+
+
+What if we don't want this limitation, we want to see every user to see the exact fonts that we intended to.
+
+Then we can use Font-Embedding.
+
+for this we can use fonts.google.com.
+ we can select all the font styles that we need and embed it. we can use the link given in the google font website after we select these styles in our index.html. we can use any of these selected fonts to any of the elements in our css.
+ we can download these fonts also. but we have to use the link for google font website where we embedded these  fonts as we need all the users to get the access to the fonts.
+
+* we can change the font size of the text to change it's size. font-size property. we can use px, % or em
+* avoid using px as this is not dynamic that is if the user has his browser's font-size setting as large then it won't reflect if we use px it will stay the exact size in px.
+* so use % or em and em is preferred. because 100% is 16px and 1 em is 16px.
+1em = 100% = 16px
+* we can use px if we don't want to the font size to adjust according to the browsers default size.
+
+* now there could occur a problem with the dynamic sizes % and em. let's say the body has already set font size to 2em or 200%.
+and you set your h1 tag to font size of 562% or 5.62em. the size gets inhertied from the parent and the new size mentioned gets added on
+top of the parent's font size. so the final font size would be 7.62em or 762%.
+* this doesn't happen with px if you specify the pixel then it will override and doesn't inherit any parent defined size and add to that.
+the newly mentioned  size will be the final font-size.
+* to avoid this potential error using the dynamic sizes we can use a new one called 'rem' i.e the root em.
+so if we use rem then it will be dynamic and at the same time it will be like px and doesn't inherit from parent and add the newly mentioned size on top of that inherited size.
+it will make the newly mentioned font-size as the final size on the browser.
+
+* so it is best to use 'rem' in most cases.
+
+*Float and Clear
+* float is used to float an element(eg-img) to a side eg-left and the text around it will wrap around on the right side of this element.
+this what float is meant to used for. we should not use float for all the other positioning cases because there are lot of corner cases
+and it might result in errors and problems.
+* clear property is kinda like the opposite of float now let's say if we want the above text which has h1,p tags. but we want the p tag text
+to not wrap around  img but we only want the h1 tag to be like that. so now to stop the p tag  to wrap around on right side of the image
+we can use the 'clear:left;' so this will clear anything on left side of this p tag so thep tag will come below the image
+and with nothing on left side to that p tag.
