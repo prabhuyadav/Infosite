@@ -1,33 +1,32 @@
 body {
-  color: #40514E;
+  color: #40514e;
   margin: 0;
   text-align: center;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
 h1 {
   margin: 50px auto 0 auto;
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
   /*width: 20%;  text-align:center set in this h1's parent element i.e body won't be applied here as the width is set specifically set so we can use margin:auto*/
   /*margin : 0 auto 0 auto;*/
   font-size: 5.62rem; /* 1em = 100% = 16px*/
-  color: #66BFBF;
+  color: #66bfbf;
   line-height: 1.5; /* twice the font-size. this increases the box-height that the h1 is in,
   there by increasing space between h1 and the elements above and below it.default line-height is around 1-1.2  based on browser*/
-
 }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
-  color: #66BFBF;
+  color: #66bfbf;
   font-weight: normal;
   padding-bottom: 10px;
 }
 
 h3 {
-  font-family: 'Montserrat', sans-serif;
-  color: #11999E;
+  font-family: "Montserrat", sans-serif;
+  color: #11999e;
 }
 
 p {
@@ -35,20 +34,20 @@ p {
 }
 
 a {
-  font-family: 'Montserrat', sans-serif;
-  color: #11999E;
+  font-family: "Montserrat", sans-serif;
+  color: #11999e;
   margin: 10px 20px;
   text-decoration: none;
 }
 
 a:hover {
-  color: #EAF6F6;
+  color: #eaf6f6;
 }
 
 hr {
-  border : dotted #EAF6F6  6px;  /*using border property can specify border style ,color and width also in one line*/
-  border-bottom : none;
-  width : 5%;
+  border: dotted #eaf6f6 6px; /*using border property can specify border style ,color and width also in one line*/
+  border-bottom: none;
+  width: 5%;
   margin: 100px auto;
 
   /* can also use this and other variations
@@ -57,8 +56,6 @@ hr {
   border-top-style: none;
   width: 7%;
   border-width: 6px;*/
-
-
 }
 
 .web {
@@ -71,7 +68,7 @@ hr {
 }
 
 .top-container {
-  background-color: #EAF6F6;
+  background-color: #eaf6f6;
   position: relative;
   padding-top: 100px;
 }
@@ -81,7 +78,7 @@ hr {
 }
 
 .bottom-container {
-  background-color: #66BFBF;
+  background-color: #66bfbf;
   padding: 50px 0 20px;
 }
 
@@ -98,7 +95,6 @@ hr {
   bottom: 300px;
 }
 
-
 .skill-row {
   width: 50%;
   margin: 100px auto 100px auto;
@@ -110,15 +106,17 @@ hr {
 }
 
 .computer_photo {
-  width: 25%;  /* so the width is 25% of the total width of it's parent i.e skill-row*/
+  width: 25%; /* so the width is 25% of the total width of it's parent i.e skill-row*/
   float: left;
   margin-right: 30px;
 }
 
-.chillies_photo {
+.mern_photo {
   width: 25%;
   float: right;
   margin-left: 30px;
+  background-color: aliceblue;
+  border-radius: 50%;
 }
 
 .contact-message {
@@ -127,10 +125,9 @@ hr {
 }
 
 .copyright {
-  color: #EAF6F6;
+  color: #eaf6f6;
   font-size: 0.75rem;
   padding: 20px 0;
-
 }
 
 .btn {
@@ -143,7 +140,7 @@ hr {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
